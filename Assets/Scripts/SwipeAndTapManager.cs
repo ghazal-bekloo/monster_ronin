@@ -56,11 +56,11 @@ public class SwipeAndTapManager : MonoBehaviour
 
         if (swipeTrail != null)
         {
-            swipeTrail.enabled = false;        // خاموش کامل
-            swipeTrail.Clear();                // پاک کردن کش
-            swipeTrail.transform.position = wp; // تلپورت به جای انگشت
-            swipeTrail.enabled = true;         // روشن
-            swipeTrail.emitting = true;        // شروع رسم
+            swipeTrail.enabled = false;        
+            swipeTrail.Clear();                
+            swipeTrail.transform.position = wp; 
+            swipeTrail.enabled = true;         
+            swipeTrail.emitting = true;        
         }
 
     }
@@ -100,19 +100,19 @@ public class SwipeAndTapManager : MonoBehaviour
 
         if (swipeTrail != null)
         {
-            swipeTrail.emitting = false;  // دیگه نقطه جدید نگیره
-            swipeTrail.enabled = false;   // کلاً خاموشش کن
+            swipeTrail.emitting = false;  
+            swipeTrail.enabled = false;   
         }
 
 
-        // تشخیص Tap
+    
         if (dist <= tapDetectionThreshold)
         {
             PerformTapAction(endPosition);
             return;
         }
 
-        // تشخیص Swipe
+       
         if (dist < 0.1f) return;
 
         delta.Normalize();

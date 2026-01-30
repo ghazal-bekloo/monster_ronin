@@ -8,13 +8,13 @@ public class Enemy_Maker : MonoBehaviour
 
     public float spawnInterval = 2f;
 
-    // فقط یک نقطه اسپاون
+    
     public Transform spawnPoint;
 
-    public int maxEnemiesToSpawn = 0; // 0 = بی‌نهایت
+    public int maxEnemiesToSpawn = 0; 
     private int enemiesSpawned = 0;
 
-    public GameObject target; // هدف دشمن‌ها
+    public GameObject target; 
     public game_maneger game_Maneger;
 
     void Start()
@@ -26,16 +26,16 @@ public class Enemy_Maker : MonoBehaviour
     {
         while (maxEnemiesToSpawn == 0 || enemiesSpawned < maxEnemiesToSpawn)
         {
-            // انتخاب یک دشمن تصادفی
+            
             int randomEnemyIndex = Random.Range(0, EnemyPrefabs.Count);
             GameObject enemyPrefab = EnemyPrefabs[randomEnemyIndex];
 
-            // اسپاون دشمن در یک نقطه ثابت
+            
             Vector2 spawnPosition = spawnPoint.position;
 
             GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
 
-            // ست کردن Target و GameManager
+           
             EnemyScript enemyScript = enemy.GetComponent<EnemyScript>();
             enemyScript.gameManager = game_Maneger;
            

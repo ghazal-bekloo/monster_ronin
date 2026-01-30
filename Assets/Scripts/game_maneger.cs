@@ -37,7 +37,7 @@ public class game_maneger : MonoBehaviour
     {
         life -= 1;
 
-        // حذف یکی از جانها UI
+      
         if (life == 3)
             Life4.SetActive(false);
         else if (life == 2)
